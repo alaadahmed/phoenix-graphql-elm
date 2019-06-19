@@ -4,8 +4,8 @@ This is startup template that I found myself use so often and it take sometime t
 # How it was configurated?
   * First I removed `milligram` CSS Framework that is used by default in __Phoenix__ by just deleting `phoenix.css` file from `/assets/css/` folder.
   * Added [`Bulma`](https://bulma.io) CSS Framework using `yarn add bulma --dev` and changed `/assets/app.css` -> `/assets/app.scss` and added to it:
-    - `@import "~bulma/bulma"` to add support for __Bulma__ 
-    - `@import "./custom"` for my custom styles
+    - `@import "~bulma/bulma"` to add support for __Bulma__, you can write the full path `../node_modules/bulma/bulma` if you faced issues in recognizing it.
+    - `@import "./custom"` for my custom styles, refers to `/assets/_custom.scss` file.
 ## Webpack Configurations `webpack.config.js`
   * Support __Sass__ using [`DartSass`](https://github.com/sass/dart-sass) and [`sass-loader`](https://github.com/webpack-contrib/sass-loader).
   * Configure `sass-loader` _options:_ `{implementation: require("sass")}` so it will use `sass` instead of the default one `node-sass` and will stop complaining.
