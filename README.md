@@ -32,8 +32,9 @@ This is startup template that I found myself use so often and it take sometime t
   * Added some dummy folders and files for schema file, schema types, resolvers files.
 
 ## TODO
-  - [] Add User __Authentication__ and __Authorization__.
-  - [] Add Session support.
+  - [x] Add folders and files for schema and resolvers.
+  - [ ] Add User __Authentication__ and __Authorization__.
+  - [ ] Add Session support.
 
 To start your Phoenix server:
 
