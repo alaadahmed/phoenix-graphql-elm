@@ -33,8 +33,10 @@ This is startup template that I found myself use so often and it take sometime t
 
 ## TODO
   - [x] Add folders and files for schema and resolvers.
-  - [ ] Add User __Authentication__ and __Authorization__.
-  - [ ] Add Session support.
+  - [x] Add User __Authentication__ and __Authorization__.
+  - [x] Add Session support.
+  - [ ] Add GraphQL Schema and Resolvers.
+  - [ ] Implement Elm-GraphQL and connect to our backend.
 
 To start your Phoenix server:
 
