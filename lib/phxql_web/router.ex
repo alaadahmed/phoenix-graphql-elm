@@ -7,6 +7,7 @@ defmodule PhxQLWeb.Router do
     plug(:fetch_flash)
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
+    plug(PhxQLWeb.Plugs.SetCurrentUser)
   end
 
   pipeline :api do
@@ -17,6 +18,12 @@ defmodule PhxQLWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
+    get("/login", SessionController, :new)
+    post("/login", SessionController, :create)
+    delete("/logout", SessionController, :delete)
+
+    resources("/register", RegisterController, only: [:new, :create])
+    resources("/users", UserController, only: [:index, :show])
   end
 
   scope "/api" do

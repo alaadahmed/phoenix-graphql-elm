@@ -23,6 +23,7 @@ defmodule PhxQLWeb do
 
       import Plug.Conn
       import PhxQLWeb.Gettext
+      alias PhxQLWeb.Controllers.Helpers, as: Navigate
       alias PhxQLWeb.Router.Helpers, as: Routes
     end
   end
@@ -41,6 +42,7 @@ defmodule PhxQLWeb do
 
       import PhxQLWeb.ErrorHelpers
       import PhxQLWeb.Gettext
+      alias PhxQLWeb.Controllers.Helpers, as: Navigate
       alias PhxQLWeb.Router.Helpers, as: Routes
     end
   end

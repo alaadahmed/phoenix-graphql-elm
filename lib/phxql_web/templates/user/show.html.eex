@@ -1,0 +1,14 @@
+<div class="hero is-medium is-info is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title"><%= @user.first_name <> " " <> @user.last_name%></h1>
+      <h2 class="subtitle"><%= @user.email %></h2>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <h1 class="text-gray-700 text-3xl font-bold">User Page</h1>
+    <h2 class="text-gray-600 text-xl font-normal">Here you can add <strong class="text-gray-700">user</strong> stuff</h2>
+  </div>
+</div>
