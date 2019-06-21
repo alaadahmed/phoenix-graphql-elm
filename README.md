@@ -1,7 +1,7 @@
 # PhxQL
 This is startup template that I found myself use so often and it take sometime to setup so I preconfigured it to be ready to work with.
 
-# How it was configurated?
+## How it was configurated?
   * First I removed `milligram` CSS Framework that is used by default in __Phoenix__ by just deleting `phoenix.css` file from `/assets/css/` folder.
   * Added [`Bulma`](https://bulma.io) CSS Framework using `yarn add bulma --dev` and changed `/assets/app.css` -> `/assets/app.scss` and added to it:
     - `@import "~bulma/bulma"` to add support for __Bulma__, you can write the full path `../node_modules/bulma/bulma` if you faced issues in recognizing it.
