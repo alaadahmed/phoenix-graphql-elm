@@ -4,6 +4,7 @@ import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
+import Tailwind exposing (..)
 
 
 
@@ -59,36 +60,52 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "column is-half is-offset-one-quarter" ]
-        [ div [ class "field" ]
-            [ p [ class "control has-icons-left" ]
-                [ viewInput "input" "text" "Name" model.name Name
-                , span [ class "icon is-small is-left" ]
-                    [ i [ class "fas fa-user" ] []
-                    ]
+    section [ class "section" ]
+        [ div [ class "container" ]
+            [ h1 [ class "text-3xl font-bold text-gray-700" ]
+                [ text "Section from ELM"
                 ]
-            ]
-        , div [ class "field" ]
-            [ p [ class "control has-icons-left" ]
-                [ viewInput "input" "password" "Password" model.password Password
-                , span [ class "icon is-small is-left" ]
-                    [ i [ class "fas fa-lock" ] []
-                    ]
+            , h2 [ class "text-xl font-normal text-gray-600" ]
+                [ text "A simple container to divide your page into "
+                , strong [ class "text-gray-700" ] [ text "sections" ]
+                , text ", like the one you're currently reading, which by the way from "
+                , strong [ class "text-gray-700" ] [ text "ELM" ]
                 ]
-            ]
-        , div [ class "field" ]
-            [ p [ class "control has-icons-left" ]
-                [ viewInput "input" "password" "Re-enter Password" model.passwordAgain PasswordAgain
-                , span [ class "icon is-small is-left" ]
-                    [ i [ class "fas fa-lock" ] []
-                    ]
-                ]
-            ]
-        , div [ class "field" ]
-            [ p [ class "control" ]
-                [ viewValidation model ]
             ]
         ]
+
+
+
+-- div [ class classContainForm ]
+--     [ div [ class "field" ]
+--         [ p [ class "control has-icons-left" ]
+--             [ viewInput "input" "text" "Name" model.name Name
+--             , span [ class "icon is-small is-left" ]
+--                 [ i [ class "fas fa-user" ] []
+--                 ]
+--             ]
+--         ]
+--     , div [ class "field" ]
+--         [ p [ class "control has-icons-left" ]
+--             [ viewInput "input" "password" "Password" model.password Password
+--             , span [ class "icon is-small is-left" ]
+--                 [ i [ class "fas fa-lock" ] []
+--                 ]
+--             ]
+--         ]
+--     , div [ class "field" ]
+--         [ p [ class "control has-icons-left" ]
+--             [ viewInput "input" "password" "Re-enter Password" model.passwordAgain PasswordAgain
+--             , span [ class "icon is-small is-left" ]
+--                 [ i [ class "fas fa-lock" ] []
+--                 ]
+--             ]
+--         ]
+--     , div [ class "field" ]
+--         [ p [ class "control" ]
+--             [ viewValidation model ]
+--         ]
+--     ]
 
 
 viewInput : String -> String -> String -> String -> (String -> msg) -> Html msg

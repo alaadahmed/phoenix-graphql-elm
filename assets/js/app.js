@@ -10,6 +10,7 @@ import css from "../css/app.scss"
 // Import dependencies
 //
 import "phoenix_html"
+import $ from 'jquery'
 
 // Import local files
 //
@@ -21,3 +22,9 @@ import { Elm } from "../src/Main.elm"
 var app = Elm.Main.init({
   node: document.getElementById('elm-main')
 });
+
+setTimeout(function () {
+  $(".alert-box").fadeTo(500, 0).slideUp(500, function () {
+    $(this).remove();
+  });
+}, 2000);

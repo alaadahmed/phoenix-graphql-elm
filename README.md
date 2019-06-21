@@ -1,11 +1,12 @@
 # PhxQL
 This is startup template that I found myself use so often and it take sometime to setup so I preconfigured it to be ready to work with.
 
-# How it was configurated?
+## How it was configurated?
   * First I removed `milligram` CSS Framework that is used by default in __Phoenix__ by just deleting `phoenix.css` file from `/assets/css/` folder.
   * Added [`Bulma`](https://bulma.io) CSS Framework using `yarn add bulma --dev` and changed `/assets/app.css` -> `/assets/app.scss` and added to it:
-    - `@import "~bulma/bulma"` to add support for __Bulma__ 
-    - `@import "./custom"` for my custom styles
+    - `@import "~bulma/bulma"` to add support for __Bulma__, you can write the full path `../node_modules/bulma/bulma` if you faced issues in recognizing it.
+    - `@import "./custom"` for my custom styles, refers to `/assets/_custom.scss` file.
+  * Added [`Tailwindcss`](https://tailwindcss.com/) CSS utility framework to have more control on my styling, for information about how to install it and configure it please read this quick [tutorial](https://www.derrickreimer.com/tech/2019/06/12/tailwind-phoenix.html?utm_campaign=elixir_radar_195&utm_medium=email&utm_source=RD+Station).
 ## Webpack Configurations `webpack.config.js`
   * Support __Sass__ using [`DartSass`](https://github.com/sass/dart-sass) and [`sass-loader`](https://github.com/webpack-contrib/sass-loader).
   * Configure `sass-loader` _options:_ `{implementation: require("sass")}` so it will use `sass` instead of the default one `node-sass` and will stop complaining.
@@ -33,14 +34,16 @@ This is startup template that I found myself use so often and it take sometime t
 
 ## TODO
   - [x] Add folders and files for schema and resolvers.
-  - [ ] Add User __Authentication__ and __Authorization__.
-  - [ ] Add Session support.
+  - [x] Add User __Authentication__ and __Authorization__.
+  - [x] Add Session support.
+  - [ ] Add GraphQL Schema and Resolvers.
+  - [ ] Implement Elm-GraphQL and connect to our backend.
 
-To start your Phoenix server:
+## To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
+  * Install Node.js dependencies with `cd assets && yarn install`
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
