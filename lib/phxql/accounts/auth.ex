@@ -1,16 +1,22 @@
 defmodule PhxQL.Accounts.Auth do
+  import Ecto.Query
   alias PhxQL.Repo
   alias PhxQL.Accounts.User
 
   def sign_in(email, password) do
-    user = Repo.get_by(User, email: email)
+    query = from(u in User, where: u.email == ^email)
 
-    cond do
-      user && Argon2.check_pass(user, password) ->
-        {:ok, user}
+    case Repo.one(query) do
+      nil ->
+        Argon2.no_user_verify()
+        {:error, :invalid_credentials}
 
-      true ->
-        {:error, :unauthorized}
+      user ->
+        if Argon2.check_pass(user, password) do
+          {:ok, user}
+        else
+          {:error, :invalid_credentials}
+        end
     end
   end
 
