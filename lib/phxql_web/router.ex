@@ -10,8 +10,16 @@ defmodule PhxQLWeb.Router do
     plug(PhxQLWeb.Plugs.SetCurrentUser)
   end
 
+  pipeline :authenticated do
+    # This is only works if you use Guardian for Authentication.
+    # So don't apply it on any routes unless you already used Guardian 
+    # to authenticate users to your resources.
+    plug(PhxQLWeb.Auth.Pipeline)
+  end
+
   pipeline :api do
     plug(:accepts, ["json"])
+    plug(PhxQLWeb.Plugs.Context)
   end
 
   scope "/", PhxQLWeb do
@@ -26,6 +34,7 @@ defmodule PhxQLWeb.Router do
     resources("/users", UserController, only: [:index, :show])
   end
 
+  # Here is my GraphQL APIs that is protected through Absinthe Implementation.
   scope "/api" do
     pipe_through(:api)
     forward("/graphql", Absinthe.Plug, schema: PhxQLWeb.Schema)
@@ -34,6 +43,12 @@ defmodule PhxQLWeb.Router do
       forward("/graphiql", Absinthe.Plug.GraphiQL, schema: PhxQLWeb.Schema)
     end
   end
+
+  # Here I put my REST APIs under protection.
+  # scope "/api" do
+  #   pipe_through([:api, :authenticated])
+  #   resources("/users", UserController, only: [:index, :show])
+  # end
 
   # Other scopes may use custom stacks.
   # scope "/api", PhxQLWeb do
