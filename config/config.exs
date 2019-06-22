@@ -26,11 +26,16 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Configuration for Guardian
 config :phxql, PhxQLWeb.Auth.Guardian,
-  issuer: "phxql",
+  allowed_algos: ["HS512"],
+  verify_module: Guardian.Token.Jwt,
+  allowed_drift: 2000,
   verify_issuer: true,
+  serializer: PhxQLWeb.Guardian,
+  issuer: "phxql",
   secret_key: System.get_env("GUARDIAN_SECRET_KEY")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
+import_config("#{Mix.env()}.exs")
