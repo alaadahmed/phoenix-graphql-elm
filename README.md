@@ -36,7 +36,9 @@ This is startup template that I found myself use so often and it take sometime t
   - [x] Add folders and files for schema and resolvers.
   - [x] Add User __Authentication__ and __Authorization__.
   - [x] Add Session support.
-  - [ ] Add GraphQL Schema and Resolvers.
+  - [x] Add GraphQL Schema and Resolvers.
+  - [x] Add Blog __Posts__ and __Comments__ schemas.
+  - [x] Implement GraphQL to _create_, _delete_ __Posts__ and __Comments__.
   - [ ] Implement Elm-GraphQL and connect to our backend.
 
 ## To start your Phoenix server:
