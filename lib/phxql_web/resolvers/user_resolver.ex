@@ -1,7 +1,7 @@
 defmodule PhxQLWeb.Resolvers.UserResolver do
   alias PhxQL.Accounts
 
-  def users(_, _, %{context: context}) do
+  def users(_, _, _) do
     {:ok, Accounts.list_users()}
   end
 
