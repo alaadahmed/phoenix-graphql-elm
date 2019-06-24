@@ -5,7 +5,7 @@
     "deploy": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "elm": "elm",
-    "api": "elm-graphql http://localhost:4000/api --base Todos"
+    "api": "elm-graphql http://localhost:4000/api/graphql --base Users"
   },
   "dependencies": {
     "phoenix": "file:../deps/phoenix",

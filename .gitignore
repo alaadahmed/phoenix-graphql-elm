@@ -37,3 +37,4 @@ npm-debug.log
 /config/prod.secret.exs
 
 /assets/elm-stuff
+/.elixir_ls/

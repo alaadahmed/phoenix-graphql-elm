@@ -1,4 +1,4 @@
-defmodule PhxQLWeb.Guardian do
+defmodule PhxQLWeb.Auth.Guardian do
   use Guardian, otp_app: :phxql
   alias PhxQL.{Accounts, Accounts.User}
 
