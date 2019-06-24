@@ -8,11 +8,11 @@ defmodule PhxQLWeb.Controllers.Helpers do
     path =
       conn
       |> get_req_header("referer")
-      |> referrer
+      |> referer
 
     path || default
   end
 
-  defp referrer([]), do: nil
-  defp referrer([h | _]), do: h
+  defp referer([]), do: nil
+  defp referer([h | _]), do: h
 end
