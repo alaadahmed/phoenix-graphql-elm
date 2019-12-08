@@ -22,7 +22,7 @@ This is startup template that I found myself use so often and it take sometime t
     ```
   * I replaced everything in `/lib/YOUR_APP_WEB/templates/page/index.html.eex` file with `<div id="elm-main"></div>` as here my elm output will show up.
   * I removed most of boilerplate code that comes in `app.html.eex` file. I added also [`FontAwesome 5.9.0`](https://use.fontawesome.com/releases/v5.9.0/css/all.css)
-  * Sometimes I face issues when installing `elm-webpack-loader` due to __node__ version, as I always have latest version of it so I added `.nvmrc` file inside `/assets` folder and in it I wrote [`10.16.0`](https://nodejs.org/en/) which is latest LTS version of __node__ at the time of writing this, if you want to configure `nvm` or install it on your system check [this](https://github.com/lukechilds/zsh-nvm) if you use `oh-my-zsh` or [this](https://github.com/nvm-sh/nvm) for `nvm` itself as a __Node Version Manager__
+  * Sometimes I face issues when installing `elm-webpack-loader` due to __node__ version, as I always have latest version of it so if you have issues due to __node__ version then add `.nvmrc` file inside `/assets` folder and in it write [`12.13.0`](https://nodejs.org/en/) which is latest LTS version of __node__ at the time of writing this, if you want to configure `nvm` or install it on your system check [this](https://github.com/lukechilds/zsh-nvm) if you use `oh-my-zsh` or [this](https://github.com/nvm-sh/nvm) for `nvm` itself as a __Node Version Manager__, __**UPDATE:**__ no issues with new versions of __node__ as I have now version _13.3.0_ and it works fine.
   
 ## Adding GraphQL
   * Add `GraphQL` for __Phoenix__ is very straight forward, check please [`Absinthe`](https://github.com/absinthe-graphql/absinthe) for installation.
@@ -39,7 +39,7 @@ This is startup template that I found myself use so often and it take sometime t
   - [x] Add GraphQL Schema and Resolvers.
   - [x] Add Blog __Posts__ and __Comments__ schemas.
   - [x] Implement GraphQL to _create_, _delete_ __Posts__ and __Comments__.
-  - [ ] Implement Elm-GraphQL and connect to our backend.
+  - [x] Implement Elm-GraphQL and connect to our backend.
 
 ## To start your Phoenix server:
 
