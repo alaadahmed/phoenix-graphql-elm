@@ -42,7 +42,7 @@ defmodule PhxQL.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:guardian, "~> 1.0"},
+      {:guardian, "~> 2.0"},
       {:comeonin, "~> 5.1"},
       {:argon2_elixir, "~> 2.0"},
       {:absinthe, "~> 1.4"},
