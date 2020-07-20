@@ -12,25 +12,25 @@
     "phoenix_html": "file:../deps/phoenix_html"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@dillonkearns/elm-graphql": "^4.0.2",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@dillonkearns/elm-graphql": "^4.0.3",
     "babel-loader": "^8.1.0",
-    "bulma": "^0.8.2",
-    "bulma-calendar": "^6.0.7",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.5.3",
+    "bulma": "^0.9.0",
+    "bulma-calendar": "^6.0.9",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.6.0",
     "elm-webpack-loader": "^6.0.1",
-    "jquery": "^3.5.0",
+    "jquery": "^3.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
-    "tailwindcss": "^1.4.1",
+    "tailwindcss": "^1.5.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }
