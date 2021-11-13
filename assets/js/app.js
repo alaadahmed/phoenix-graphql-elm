@@ -10,7 +10,6 @@ import css from "../css/app.scss"
 // Import dependencies
 //
 import "phoenix_html"
-import $ from 'jquery'
 import { Elm } from "../src/Main.elm"
 
 // Import local files
@@ -31,14 +30,6 @@ let liveSocket = new LiveSocket("/live", Socket, {
 const app = Elm.Main.init({
   node: document.getElementById('elm-main')
 });
-
-app()
-
-setTimeout(function () {
-  $(".alert-box").fadeTo(500, 0).slideUp(500, function () {
-    $(this).remove();
-  });
-}, 2000);
 
 // Show progress bar on live navigation and form submits
 topbar.config({ barColors: { 0: "#29d" }, shadowColor: "rgba(0, 0, 0, .3)" });

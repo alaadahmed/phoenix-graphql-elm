@@ -25,7 +25,6 @@ config :phxql, PhxQLWeb.Endpoint,
       "node_modules/webpack/bin/webpack.js",
       "--mode",
       "development",
-      "--watch-stdin",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
