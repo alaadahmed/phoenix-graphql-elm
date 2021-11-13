@@ -34,9 +34,7 @@ module.exports = (env, options) => ({
         exclude: [/elm-stuff/, /node_modules/],
         use: {
           loader: "elm-webpack-loader",
-          options: {
-            debug: options.mode == "development",
-          }
+          options: {}
         }
 
       },
@@ -77,11 +75,10 @@ module.exports = (env, options) => ({
         }]
       }
     ],
-    noParse: [/.elm$/]
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: '../css/app.css' }),
-    new CopyWebpackPlugin([{ from: 'static/', to: '../' }]),
+    new CopyWebpackPlugin({patterns: [{ from: 'static/', to: '../' }]}),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'

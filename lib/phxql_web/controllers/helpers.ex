@@ -1,5 +1,6 @@
 defmodule PhxQLWeb.Controllers.Helpers do
   import Plug.Conn
+
   # def redirect_back(conn, opts \\ []) do
   #   Phoenix.Controller.redirect(conn, to: NavigationHistory.last_path(conn))
   # end

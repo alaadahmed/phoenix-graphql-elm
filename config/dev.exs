@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 config :phxql, PhxQL.Repo,
@@ -60,7 +60,7 @@ config :phxql, PhxQLWeb.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phxql_web/{live,views}/.*(ex)$",
+      ~r"lib/phxql_web/(live|views)/.*(ex)$",
       ~r"lib/phxql_web/templates/.*(eex)$"
     ]
   ]

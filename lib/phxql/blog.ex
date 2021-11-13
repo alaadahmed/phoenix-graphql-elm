@@ -197,4 +197,12 @@ defmodule PhxQL.Blog do
   def change_comment(%Comment{} = comment) do
     Comment.changeset(comment, %{})
   end
+
+  def datasource() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  def query(queryable, _) do
+    queryable
+  end
 end

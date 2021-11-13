@@ -1,9 +1,13 @@
 defmodule PhxQLWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phxql
 
-  socket "/socket", PhxQLWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  @session_options [
+    store: :cookie,
+    key: "_phxql_key",
+    signing_salt: "HHsl71nd"
+  ]
+
+  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -21,6 +25,7 @@ defmodule PhxQLWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :phxql
   end
 
   plug Plug.RequestId
@@ -33,14 +38,6 @@ defmodule PhxQLWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
-
-  # The session will be stored in the cookie and signed,
-  # this means its contents can be read but not tampered with.
-  # Set :encryption_salt if you would also like to encrypt it.
-  plug Plug.Session,
-    store: :cookie,
-    key: "_phxql_key",
-    signing_salt: "HHsl71nd"
-
+  plug Plug.Session, @session_options
   plug PhxQLWeb.Router
 end

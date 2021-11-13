@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :phxql,
   namespace: PhxQL,
@@ -15,8 +15,9 @@ config :phxql,
 config :phxql, PhxQLWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "D412icOx2aPwA2/2jhUZSKpqxt9Jy2Pc8uTIiF24yvor+3+6cPQ6hURRURz9KzyF",
-  render_errors: [view: PhxQLWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhxQL.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: PhxQLWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PhxQL.PubSub,
+  live_view: [signing_salt: "+ospv5/Y"]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -101,4 +101,12 @@ defmodule PhxQL.Accounts do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  def datasource() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  def query(queryable, _) do
+    queryable
+  end
 end

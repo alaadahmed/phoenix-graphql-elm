@@ -8,12 +8,10 @@ defmodule PhxQL.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Start the Ecto repository
       PhxQL.Repo,
-      # Start the endpoint when the application starts
+      PhxQLWeb.Telemetry,
+      {Phoenix.PubSub, name: PhxQL.PubSub},
       PhxQLWeb.Endpoint
-      # Starts a worker by calling: PhxQL.Worker.start_link(arg)
-      # {PhxQL.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -38,3 +38,6 @@ npm-debug.log
 
 /assets/elm-stuff
 /.elixir_ls/
+.DS_Store
+**/.DS_Store
+

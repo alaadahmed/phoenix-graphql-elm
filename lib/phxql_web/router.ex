@@ -4,7 +4,8 @@ defmodule PhxQLWeb.Router do
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
-    plug(:fetch_flash)
+    plug(:fetch_live_flash)
+    plug(:put_root_layout, {PhxQLWeb.LayoutView, :root})
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
     plug(PhxQLWeb.Plugs.SetCurrentUser)
@@ -12,7 +13,7 @@ defmodule PhxQLWeb.Router do
 
   pipeline :authenticated do
     # This is only works if you use Guardian for Authentication.
-    # So don't apply it on any routes unless you already used Guardian 
+    # So don't apply it on any routes unless you already used Guardian
     # to authenticate users to your resources.
     plug(PhxQLWeb.Auth.Pipeline)
   end
