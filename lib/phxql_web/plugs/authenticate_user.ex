@@ -13,7 +13,7 @@ defmodule PhxQLWeb.Plugs.AuthenticateUser do
     else
       conn
       |> put_flash(:error, "You need to sign in or sign up before continuing.")
-      |> redirect(to: Routes.session_path(conn, :new))
+      |> redirect(to: Routes.user_session_path(conn, :new))
       |> halt()
     end
   end

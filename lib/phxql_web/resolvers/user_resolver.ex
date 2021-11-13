@@ -6,6 +6,6 @@ defmodule PhxQLWeb.Resolvers.UserResolver do
   end
 
   def register_user(_, %{input: params}, _) do
-    Accounts.create_user(params)
+    Accounts.register_user(params)
   end
 end

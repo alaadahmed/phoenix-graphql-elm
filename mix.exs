@@ -7,7 +7,7 @@ defmodule PhxQL.MixProject do
       version: "0.3.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -33,6 +33,7 @@ defmodule PhxQL.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:argon2_elixir, "~> 2.0"},
       {:phoenix, "~> 1.6.2"},
       {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_ecto, "~> 4.4"},
@@ -44,11 +45,10 @@ defmodule PhxQL.MixProject do
       {:gettext, "~> 0.18.2"},
       {:jason, "~> 1.2"},
       {:guardian, "~> 2.2"},
-      {:comeonin, "~> 5.3"},
-      {:argon2_elixir, "~> 2.4"},
       {:absinthe, "~> 1.6"},
       {:absinthe_plug, "~> 1.5"},
       {:dataloader, "~> 1.0"},
+      {:swoosh, "~> 1.5"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
@@ -64,9 +64,14 @@ defmodule PhxQL.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      setup: ["deps.get", "ecto.setup", "cmd --cd assets npm install"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      "assets.deploy": [
+        "cmd --cd assets npm build.js --deploy",
+        "phx.digest"
+      ]
     ]
   end
 end

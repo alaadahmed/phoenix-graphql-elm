@@ -1,21 +1,20 @@
 defmodule PhxQL.Blog.Post do
   use Ecto.Schema
   import Ecto.Changeset
-  alias PhxQL.Accounts.User
 
   schema "posts" do
-    field(:title, :string)
-    field(:content, :string)
-    field(:published, :boolean, default: false)
+    field :content, :string
+    field :published, :boolean, default: false
+    field :title, :string
+    field :user_id, :id
 
-    belongs_to(:user, User)
     timestamps()
   end
 
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :content, :published, :user_id])
-    |> validate_required([:title, :content, :published, :user_id])
+    |> cast(attrs, [:title, :content, :published])
+    |> validate_required([:title, :content, :published])
   end
 end

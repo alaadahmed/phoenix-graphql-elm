@@ -21,10 +21,13 @@ config :phxql, PhxQLWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)],
+    npx: [
+      "tailwindcss",
+      "--input=css/app.scss",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]

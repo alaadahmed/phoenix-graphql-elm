@@ -60,16 +60,16 @@ update msg model =
 
 view : Model -> Html Msg
 view _ =
-    section [ class "section" ]
-        [ div [ class "container" ]
-            [ h1 [ class "text-3xl font-bold text-gray-700" ]
+    section [ class "" ]
+        [ div [ class "" ]
+            [ h1 [ class "" ]
                 [ text "Section from ELM"
                 ]
-            , h2 [ class "text-xl font-normal text-gray-600" ]
+            , h2 [ class "" ]
                 [ text "A simple container to divide your page into "
-                , strong [ class "text-gray-700" ] [ text "sections" ]
+                , strong [ class "" ] [ text "sections" ]
                 , text ", like the one you're currently reading, which by the way from "
-                , strong [ class "text-gray-700" ] [ text "ELM" ]
+                , strong [ class "" ] [ text "ELM" ]
                 ]
             ]
         ]
@@ -83,7 +83,7 @@ viewInput c t p v toMsg =
 viewValidation : Model -> Html msg
 viewValidation model =
     if model.password == model.passwordAgain then
-        button [ class "button is-success" ] [ text "Success" ]
+        button [ class "" ] [ text "Success" ]
 
     else
-        button [ class "button is-danger" ] [ text "Failed" ]
+        button [ class "" ] [ text "Failed" ]

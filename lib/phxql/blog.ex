@@ -74,7 +74,7 @@ defmodule PhxQL.Blog do
   end
 
   @doc """
-  Deletes a Post.
+  Deletes a post.
 
   ## Examples
 
@@ -95,11 +95,11 @@ defmodule PhxQL.Blog do
   ## Examples
 
       iex> change_post(post)
-      %Ecto.Changeset{source: %Post{}}
+      %Ecto.Changeset{data: %Post{}}
 
   """
-  def change_post(%Post{} = post) do
-    Post.changeset(post, %{})
+  def change_post(%Post{} = post, attrs \\ %{}) do
+    Post.changeset(post, attrs)
   end
 
   alias PhxQL.Blog.Comment
@@ -170,7 +170,7 @@ defmodule PhxQL.Blog do
   end
 
   @doc """
-  Deletes a Comment.
+  Deletes a comment.
 
   ## Examples
 
@@ -191,11 +191,11 @@ defmodule PhxQL.Blog do
   ## Examples
 
       iex> change_comment(comment)
-      %Ecto.Changeset{source: %Comment{}}
+      %Ecto.Changeset{data: %Comment{}}
 
   """
-  def change_comment(%Comment{} = comment) do
-    Comment.changeset(comment, %{})
+  def change_comment(%Comment{} = comment, attrs \\ %{}) do
+    Comment.changeset(comment, attrs)
   end
 
   def datasource() do

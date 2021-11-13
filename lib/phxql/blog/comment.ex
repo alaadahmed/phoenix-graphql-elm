@@ -1,21 +1,19 @@
 defmodule PhxQL.Blog.Comment do
   use Ecto.Schema
   import Ecto.Changeset
-  alias PhxQL.Blog.Post
-  alias PhxQL.Accounts.User
 
   schema "comments" do
-    field(:content, :string)
+    field :content, :string
+    field :user_id, :id
+    field :post_id, :id
 
-    belongs_to(:user, User)
-    belongs_to(:post, Post)
     timestamps()
   end
 
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:content, :user_id, :post_id])
-    |> validate_required([:content, :user_id, :post_id])
+    |> cast(attrs, [:content])
+    |> validate_required([:content])
   end
 end

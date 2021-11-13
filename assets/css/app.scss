@@ -1,5 +1,9 @@
-/* This file is for your main application css. */
-@charset "utf-8";
-@import "~bulma/bulma";
-@import "./tailstyle.css";
-@import "./custom";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
+  }
+}
